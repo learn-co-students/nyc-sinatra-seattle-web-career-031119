@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title><%=@figure.name%></title>
+  </head>
+  <body>
+    <h1><%=@figure.name%></h1>
+    <h2>Titles:</h2>
+    <ul>
+      <%@figure.titles.each do |title|%>
+        <li><%=title.name%></li>
+      <%end%>
+    </ul>
+    <h2>Landmarks:</h2>
+    <ul>
+    <%@figure.landmarks.each do |landmark|%>
+    <li>
+      <%=landmark.name%> <%= "created in #{landmark.year_completed}" if landmark.year_completed%>
+    </li>
+    <%end%>
+    </ul>
+
+  </body>
+</html>

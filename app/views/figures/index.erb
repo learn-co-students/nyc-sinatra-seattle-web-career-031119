@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Figures</title>
+  </head>
+  <body>
+    <h1>Figures:</h1>
+    <br>
+    <%@figures.each do |figure|%>
+      <h2><%=figure.name%></h2>
+      <h3>Titles:</h3>
+      <%figure.titles.each do |title|%>
+        <%=title.name%>
+        <br>
+      <%end%>
+      <h3>Landmarks:</h3>
+      <%figure.landmarks.each do |landmark|%>
+        <div><%=landmark.name%> <%= "created in #{landmark.year_completed}" if landmark.year_completed%></div>
+      <%end%>
+    <%end%>
+
+  </body>
+</html>
